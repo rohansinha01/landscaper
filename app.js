@@ -23,27 +23,27 @@ function mowLawn(){
     mower.money += tool.profits
 }
 
-function upGrade(){
-    if (mower.tool + 1 < tools.length) //We can only upgrade the tools if there is a tool available.
-    {const nextTool = tools[mower.tool + 1] //made a const variable for the next tool. Moved this to this line to make sure that this function recognizes this tool upgrade.
-        if (nextTool.costs <= mower.money){ //If the next tool is less than or equal to our mower money, we are going to run this function.
+function upGrade() {
+    if (mower.tool + 1 < tools.length) { //We can only upgrade the tools if there is a tool available.
+     const nextTool = tools[mower.tool + 1] //made a const variable for the next tool. Moved this to this line to make sure that this function recognizes this tool upgrade.
+        if (nextTool.costs <= mower.money) { //If the next tool is less than or equal to our mower money, we are going to run this function.
         mower.money -= nextTool.costs //This line subtracts the price of the next tool from the mower money total
         mower.tool += 1 //This line upgrades us
-                                          }
-    
-        else {
+                                          
+        } else {
             alert('Insufficient funds. You cannot upgrade yet.')
             }//If the next tool is out of our price range, then we will get this message.
-    }  else {
-        alert("There are no more tools to upgrade")
+    } else {
+        alert("There are no more tools to upgrade") //if there are no more tools, then we will get this message
      }
     }
-      //if there are no more tools, then we will get this message
+      
 function youWin(){ // we need to make sure this game will end.
     if(mower.tool === tools.length - 1 && mower.money >= 10){ //If the current tool is equal to the last item in the array and the mower has earned enough money, run this function.
         alert('You have mowed the lawns!')
         mower.winner = true //this will flip the switch on our mower object
     }
+}
     while (!mower.winner){ //this will keep the game running until that flip is switched on winner.
         const answer = prompt(`You have ${mower.money} dollars. Do you want to mow a lawn or upgrade?`) //As the game is running, we will have this prompt asked.
             if (answer === 'm'){
@@ -54,6 +54,6 @@ function youWin(){ // we need to make sure this game will end.
             if (answer !== 'm' && answer !== 'u'){
                 alert('Not a valid answer. Use m or u') //need to weed out the other options.
             }
-        }
+        
         youWin()
     }
