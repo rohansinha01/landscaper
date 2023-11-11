@@ -6,6 +6,11 @@ const tools = [
     name: "Scissors",
     costs: 5,
     profits: 5
+    },
+    {
+    name: "Push Lawnmower",
+    costs: 25,
+    profits: 50
     }
 ] //We need an array of the objects that define the name of the item we are using, how much we paid for it, and how much it will make us.
 
@@ -39,7 +44,7 @@ function upGrade() {
     }
       
 function youWin(){ // we need to make sure this game will end.
-    if(mower.tool === tools.length - 1 && mower.money >= 10){ //If the current tool is equal to the last item in the array and the mower has earned enough money, run this function.
+    if(mower.tool === tools.length - 1 && mower.money >= 1000){ //If the current tool is equal to the last item in the array and the mower has earned enough money, run this function.
         alert('You have mowed the lawns!')
         mower.winner = true //this will flip the switch on our mower object
     }
