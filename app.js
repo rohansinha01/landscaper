@@ -11,6 +11,11 @@ const tools = [
     name: "Push Lawnmower",
     costs: 25,
     profits: 50
+    },
+    {
+    name: "Fancy Lawnmower",
+    costs: 250,
+    profits: 100
     }
 ] //We need an array of the objects that define the name of the item we are using, how much we paid for it, and how much it will make us.
 
