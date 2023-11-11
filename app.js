@@ -29,7 +29,7 @@ function upGrade() {
         if (nextTool.costs <= mower.money) { //If the next tool is less than or equal to our mower money, we are going to run this function.
         mower.money -= nextTool.costs //This line subtracts the price of the next tool from the mower money total
         mower.tool += 1 //This line upgrades us
-                                          
+        alert(`You have upgraded your tool`)                                  
         } else {
             alert('Insufficient funds. You cannot upgrade yet.')
             }//If the next tool is out of our price range, then we will get this message.
@@ -56,4 +56,6 @@ function youWin(){ // we need to make sure this game will end.
             }
         
         youWin()
+        
+
     }
