@@ -16,6 +16,11 @@ const tools = [
     name: "Fancy Lawnmower",
     costs: 250,
     profits: 100
+    },
+    {
+    name: "Team",
+    costs: 500,
+    profits: 250
     }
 ] //We need an array of the objects that define the name of the item we are using, how much we paid for it, and how much it will make us.
 
@@ -50,12 +55,12 @@ function upGrade() {
       
 function youWin(){ // we need to make sure this game will end.
     if(mower.tool === tools.length - 1 && mower.money >= 1000){ //If the current tool is equal to the last item in the array and the mower has earned enough money, run this function.
-        alert('You have mowed the lawns!')
+        alert('You have mowed the lawns with your team and have $1000!')
         mower.winner = true //this will flip the switch on our mower object
     }
 }
     while (!mower.winner){ //this will keep the game running until that flip is switched on winner.
-        const answer = prompt(`You have ${mower.money} dollars. Do you want to mow a lawn or upgrade?`) //As the game is running, we will have this prompt asked.
+        const answer = prompt(`You have ${mower.money} dollars. Do you want to mow a lawn or upgrade? Type m to mow and type u to upgrade tool`) //As the game is running, we will have this prompt asked.
             if (answer === 'm'){
             mowLawn()} //need an answer on whether to mow the lawn.
             if (answer === 'u'){
