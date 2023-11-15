@@ -67,7 +67,7 @@ function newGame(){
 }
 
 while (!mower.winner){ //this will keep the game running until that flip is switched on winner.
-        const answer = prompt(`You have ${mower.money} dollars. Do you want to mow a lawn or upgrade? Type m to mow and type u to upgrade tool`) //As the game is running, we will have this prompt asked.
+        const answer = prompt(`You have ${mower.money} dollars. Do you want to mow a lawn or upgrade? Type m to mow and type u to upgrade tool. Type n for new game`) //As the game is running, we will have this prompt asked.
             if (answer === 'm'){
             mowLawn()} //need an answer on whether to mow the lawn.
             if (answer === 'u'){
@@ -77,7 +77,7 @@ while (!mower.winner){ //this will keep the game running until that flip is swit
                 newGame()
             }
             if (answer !== 'm' && answer !== 'u' && answer!== 'n'){
-                alert('Not a valid answer. Use m or u') //need to weed out the other options.
+                alert('Not a valid answer. Use m, u, or n') //need to weed out the other options.
             }
             
         youWin()
